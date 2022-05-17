@@ -1,5 +1,9 @@
-<h1>here are all your tasks📝</h1>
-<ul><% @tasks.each do |task| %>
-    <li><%= task %></li>
-    <% end %>
+<div class="header">
+<h1>⚔️Heroes Alive⚔️</h1>
+<%= link_to "Add New Hero", '/tasks/new', class: "btn" %>
+</div>
+<ul class="container">
+  <% @tasks.each do |task| %>
+    <li class="hero-container"><%= link_to task.name, task_path(task)%></li>
+  <% end %>
 </ul>
